@@ -110,9 +110,12 @@ int main()
     for (int i = 0; i < 3; i++)
         employers[i]->Print();
 
-    LinearEquation eq1(0, 5); // ax = b, 0x = 5
-    eq1.roots();
-
-    QuadraticEquation eq2(5, 3, -26); // ax^2 + bx + c = 0, 5x^2 + 3x - 26 = 0
-    eq2.roots();
+    Equation* equation[2] =
+    {
+        new LinearEquation(0, 5), // ax = b, 0x = 5
+        new QuadraticEquation(5, 3, -26) // ax^2 + bx + c = 0, 5x^2 + 3x - 26 = 0
+    };
+   
+    for (int i = 0; i < 2; i++)
+        equation[i]->roots();
 }
